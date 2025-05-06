@@ -61,8 +61,12 @@ let collection;
 
 const resolvers = {
   Query: {
-    crimes: async (_, { limit = 10 }) => {
-      return await collection.find().limit(limit).toArray();
+    crimes: async (_, { limit = null }) => {
+      if (limit === null) {
+        return await collection.find().toArray();
+      } else if (limit > 0) {
+        return await collection.find().limit(limit).toArray();
+      }
     }
   }
 };
