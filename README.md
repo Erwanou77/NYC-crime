@@ -15,7 +15,7 @@ Ce projet met en place un **serveur GraphQL** utilisant **Apollo Server**, conne
 
   - index.js # Point d'entrée pour le serveur GraphQL
 - ingest # Dossier du serveur Python ingest
-  - insert_data.py # Script Python pour récupérer et insérer les données dans MongoDB
+  - ingest.py # Script Python pour  insérer les données dans MongoDB
 - README.md # Documentation du projet (ce fichier)
 
 
@@ -50,7 +50,7 @@ Cela démarrera les services suivants :
 
 ### 3. Interrogez les données via GraphQL
 
-Une fois que le serveur GraphQL est en cours d'exécution, vous pouvez ouvrir http://localhost:4000/graphql dans votre navigateur ou utiliser un client GraphQL (comme Apollo Studio ou Postman) pour interroger les données.
+Une fois que le serveur GraphQL est en cours d'exécution, vous pouvez ouvrir http://localhost:4000/ dans votre navigateur ou utiliser un client GraphQL (comme Apollo Studio ou Postman) pour interroger les données.
 
 #Exemple de requête :
 ```bash
