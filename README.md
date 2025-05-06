@@ -4,22 +4,19 @@ Ce projet met en place un **serveur GraphQL** utilisant **Apollo Server**, conne
 
 ## Prérequis
 
-- **Node.js** (version 14 ou plus récente)
-- **MongoDB** (en cours d'exécution localement ou via Docker)
-- **npm** ou **yarn** (pour la gestion des dépendances)
+- **Docker**
+- **Docker Compose**
 
 ## Structure du projet
 
-├── docker-compose.yml # Configuration Docker pour démarrer MongoDB et Mongo Express
+- docker-compose.yml # Configuration Docker pour démarrer MongoDB Mongo Express, GraphQL et Python ingest
 
-├── .env # Variables d'environnement pour l'URI MongoDB
+- graphql-server # Dossier du serveur GraphQL
 
-├── graphql-server # Code du serveur GraphQL
-
-│ ├── index.js # Point d'entrée pour le serveur GraphQL
-
-├── insert_data.py # Script Python pour récupérer et insérer les données dans MongoDB
-├── README.md # Documentation du projet (ce fichier)
+  - index.js # Point d'entrée pour le serveur GraphQL
+- ingest # Dossier du serveur Python ingest
+  - insert_data.py # Script Python pour récupérer et insérer les données dans MongoDB
+- README.md # Documentation du projet (ce fichier)
 
 
 
