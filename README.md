@@ -101,7 +101,7 @@ Exemple de réponse :
   }
 }
 ```
-### 8. Arrêtez les conteneurs Docker
+### 4. Arrêtez les conteneurs Docker
 Une fois que vous avez terminé, vous pouvez arrêter les conteneurs Docker avec la commande suivante :
 
 ```bash
