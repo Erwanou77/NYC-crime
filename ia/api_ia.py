@@ -38,9 +38,11 @@ def load_model():
     global model
     global scaler
     try:
-        model = torch.load("./model/crime_predictor_full.pth", map_location=device)
+        print("train")
+        model = torch.load("./model/crime_predictor_full.pth", map_location=device, weights_only=False)
         scaler = joblib.load("./model/scaler.pkl")
-    except:
+    except Exception as e:
+        print(f"Error loading model: {e}")
         model = None
 
 
@@ -56,6 +58,7 @@ def is_valid_date(row):
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
+        print("🛠 Received request at /train")
         if model is None:
             return jsonify({'error': 'Model not loaded'}), 500
         data = request.get_json()
@@ -88,7 +91,7 @@ def predict():
 
 
 
-@app.route('/train', methods=['POST'])
+@app.route('/train', methods=['GET'])
 def train():
     try:
         url = "http://localhost:4000/graphql"
@@ -186,4 +189,4 @@ def train():
 
 if __name__ == '__main__':
     load_model()
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, host='0.0.0.0')

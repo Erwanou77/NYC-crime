@@ -46,6 +46,8 @@ services:
     container_name: ia
     ports:
       - "5000:5000"
+    volumes:
+      - ./ia:/app
     depends_on:
       - mongo
     restart: always
