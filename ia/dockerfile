@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY api_ia.py .
+
+RUN pip install --no-cache-dir \
+    flask \
+    flask-cors \
+    torch \
+    scikit-learn \
+    joblib \
+    pandas \
+    requests \
+    numpy
+
+# Expose the port your Flask app runs on
+EXPOSE 5000
+
+CMD ["python", "api_ia.py"]

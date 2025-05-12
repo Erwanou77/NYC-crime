@@ -1,7 +1,7 @@
 import torch
 import joblib
 import numpy as np
-from datetime import datetime
+import datetime
 from model_def import CrimePredictor
 
 # Load trained model
