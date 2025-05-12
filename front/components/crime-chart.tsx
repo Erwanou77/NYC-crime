@@ -21,24 +21,7 @@ export default function CrimeChart() {
   return (
     <div className="h-[400px] w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="vol" stroke="#0088FE" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="agression" stroke="#00C49F" />
-          <Line type="monotone" dataKey="cambriolage" stroke="#FFBB28" />
-        </LineChart>
+        <iframe title="graph" src="https://app.powerbi.com/view?r=eyJrIjoiMTA1OGNjNTMtN2M0OS00N2QyLTkwNDUtMGFkZGFiN2JlYjk1IiwidCI6IjEwOGJjODY0LWNkZjUtNGVjMy04YjdjLTRlYjA2YmUxYjQxZCIsImMiOjl9" frameBorder={0} allowFullScreen={true}></iframe>
       </ResponsiveContainer>
     </div>
   )

@@ -17,10 +17,8 @@ export default function CrimeMap() {
   }, [])
 
   return (
-    <div ref={mapRef} className="h-[500px] w-full bg-muted/40 rounded-md flex items-center justify-center">
-      <div className="bg-background/80 p-4 rounded-md shadow-md">
-        Carte
-      </div>
+    <div className="h-[500px] w-full bg-muted/40 rounded-md flex items-center justify-center">
+      <iframe title="carte" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiY2ZhN2JhODQtNTQ2NC00MTE0LWI3ZjUtNzk5NTc3NWZlZjI3IiwidCI6IjEwOGJjODY0LWNkZjUtNGVjMy04YjdjLTRlYjA2YmUxYjQxZCIsImMiOjl9" allowFullScreen={true}></iframe>
     </div>
   )
 }

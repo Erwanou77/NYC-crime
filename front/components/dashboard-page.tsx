@@ -188,34 +188,6 @@ export default function DashboardPage() {
               <CardDescription>Distribution géographique des incidents à New York</CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="flex space-x-4 p-4">
-                <Select defaultValue="all">
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Type de crime" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Tous les crimes</SelectItem>
-                    <SelectItem value="theft">Vol</SelectItem>
-                    <SelectItem value="assault">Agression</SelectItem>
-                    <SelectItem value="burglary">Cambriolage</SelectItem>
-                    <SelectItem value="robbery">Vol à main armée</SelectItem>
-                    <SelectItem value="homicide">Homicide</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select defaultValue="all">
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Quartier" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Tous les quartiers</SelectItem>
-                    <SelectItem value="manhattan">Manhattan</SelectItem>
-                    <SelectItem value="brooklyn">Brooklyn</SelectItem>
-                    <SelectItem value="queens">Queens</SelectItem>
-                    <SelectItem value="bronx">Bronx</SelectItem>
-                    <SelectItem value="staten_island">Staten Island</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
               <CrimeMap />
             </CardContent>
           </Card>
@@ -230,9 +202,8 @@ export default function DashboardPage() {
           </Card>
         </div>
         <Tabs defaultValue="temporal">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="temporal">Analyse Temporelle</TabsTrigger>
-            <TabsTrigger value="correlation">Corrélations</TabsTrigger>
             <TabsTrigger value="prediction">Prévisions</TabsTrigger>
           </TabsList>
           <TabsContent value="temporal" className="space-y-4">
@@ -242,69 +213,7 @@ export default function DashboardPage() {
                 <CardDescription>Tendances mensuelles et hebdomadaires des incidents</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex space-x-4 mb-4">
-                  <Select defaultValue="monthly">
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Période" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="daily">Quotidien</SelectItem>
-                      <SelectItem value="weekly">Hebdomadaire</SelectItem>
-                      <SelectItem value="monthly">Mensuel</SelectItem>
-                      <SelectItem value="yearly">Annuel</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Select defaultValue="all">
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Type de crime" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">Tous les crimes</SelectItem>
-                      <SelectItem value="theft">Vol</SelectItem>
-                      <SelectItem value="assault">Agression</SelectItem>
-                      <SelectItem value="burglary">Cambriolage</SelectItem>
-                      <SelectItem value="robbery">Vol à main armée</SelectItem>
-                      <SelectItem value="homicide">Homicide</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
                 <CrimeChart />
-              </CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="correlation" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Corrélation Crime-Zone</CardTitle>
-                <CardDescription>Analyse des relations entre types de crimes et zones géographiques</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex space-x-4 mb-4">
-                  <Select defaultValue="heatmap">
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Type de visualisation" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="heatmap">Carte de chaleur</SelectItem>
-                      <SelectItem value="scatter">Nuage de points</SelectItem>
-                      <SelectItem value="matrix">Matrice de corrélation</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Select defaultValue="all">
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Variables" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">Toutes les variables</SelectItem>
-                      <SelectItem value="socioeconomic">Socio-économiques</SelectItem>
-                      <SelectItem value="demographic">Démographiques</SelectItem>
-                      <SelectItem value="urban">Urbanistiques</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="h-[400px] w-full bg-muted/40 rounded-md flex items-center justify-center">
-                  <p className="text-muted-foreground">Carte de chaleur des corrélations crime-zone</p>
-                </div>
               </CardContent>
             </Card>
           </TabsContent>
@@ -318,16 +227,6 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="flex space-x-4 mb-4">
-                  <Select defaultValue="timeseries">
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Modèle" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="timeseries">Séries temporelles</SelectItem>
-                      <SelectItem value="spatial">Clustering spatial</SelectItem>
-                      <SelectItem value="ml">Machine Learning</SelectItem>
-                    </SelectContent>
-                  </Select>
                   <Select defaultValue="30">
                     <SelectTrigger className="w-[180px]">
                       <SelectValue placeholder="Horizon" />

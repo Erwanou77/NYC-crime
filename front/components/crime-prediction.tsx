@@ -24,27 +24,6 @@ const data = [
 export default function CrimePrediction() {
   return (
     <div className="space-y-4">
-      <div className="h-[400px] w-full">
-        <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
-            data={data}
-            margin={{
-              top: 10,
-              right: 30,
-              left: 0,
-              bottom: 0,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area type="monotone" dataKey="réel" stroke="#8884d8" fill="#8884d8" />
-            <Area type="monotone" dataKey="prédit" stroke="#82ca9d" fill="#82ca9d" />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
-
       <div className="grid grid-cols-2 gap-4">
         <div className="rounded-lg border p-4">
           <h3 className="font-medium">Précision du modèle</h3>
@@ -56,24 +35,6 @@ export default function CrimePrediction() {
           <div className="mt-2 text-2xl font-bold text-amber-500">+8%</div>
           <p className="text-sm text-muted-foreground">Pour les 30 prochains jours</p>
         </div>
-      </div>
-
-      <div className="rounded-lg border p-4">
-        <h3 className="font-medium">Zones à risque élevé prévues</h3>
-        <ul className="mt-2 space-y-2">
-          <li className="flex items-center justify-between">
-            <span>Brooklyn - Quartier Bedford-Stuyvesant</span>
-            <span className="font-medium text-red-500">Risque élevé</span>
-          </li>
-          <li className="flex items-center justify-between">
-            <span>Bronx - Quartier South Bronx</span>
-            <span className="font-medium text-red-500">Risque élevé</span>
-          </li>
-          <li className="flex items-center justify-between">
-            <span>Manhattan - Quartier Harlem</span>
-            <span className="font-medium text-amber-500">Risque moyen</span>
-          </li>
-        </ul>
       </div>
     </div>
   )
